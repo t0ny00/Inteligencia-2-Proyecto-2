@@ -71,31 +71,18 @@ def updateWeights(nn,alpha,instance):
                     neuron[k] = neuron[k] + delta
 
 
-def backPropagation(nn,train_data,alpha,numIter):
+def backPropagation(nn, train_data, alpha, num_iter):
 
-    for i in range(0,numIter):
+    for i in range(0, num_iter):
+        sum_error = 0
         for row in train_data:
             instance = row[:-1]
             expected = row[-1]
-            forwardPropagate(nn, instance)
+            outputs = forwardPropagate(nn, instance)
+            sum_error += sum([(expected - outputs[j]) ** 2 for j in range(len(outputs))])
             calculateErrorOutputs(nn, [expected])
             calculateErrorHidden(nn)
             updateWeights(nn, alpha, instance)
+        if (i % 10) == 0 : print('Iter=%d, alpha=%.3f, error=%.3f' % (i, alpha, sum_error))
 
 
-if __name__ == '__main__':
-
-    nn = createNeuralNetwork(2, 3, 1)
-    # nn = [[[0.8, 0.2, 0, 0],
-    #        [0.4, 0.9, 0, 0],
-    #        [0.3, 0.5, 0, 0]],
-    #       [[0.3, 0.5, 0.9, 0, 0]]]
-
-    print nn
-    data = [[1,1,1],
-            [1,0,1],
-            [0,1,1],
-            [0,0,0]]
-    backPropagation(nn,data,0.8,100000)
-    print nn
-    print forwardPropagate(nn,[0,0])
