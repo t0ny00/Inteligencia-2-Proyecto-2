@@ -11,11 +11,15 @@ def extractData(data):
 
 
 if __name__ == '__main__':
-    train_set = np.loadtxt("datos_P2_EM2017_N500.txt")
+
+    alpha = 0.7
+    num_iter = 1000
+    n_in,n_hidden,n_out = 2,5,1
+    train_set = np.loadtxt("generated_100.txt")
     x,y = extractData(train_set)
     # random.seed(1)
-    nn = network.createNeuralNetwork(len(train_set[0])-1,2,1)
+    nn = network.createNeuralNetwork(n_in,n_hidden,n_out)
     print nn
-    network.backPropagation(nn,train_set,0.01,2000)
+    network.backPropagation(nn,train_set,alpha,num_iter)
     print nn
-    print network.forwardPropagate(nn,x[75])
+    print network.forwardPropagate(nn,x[2])
