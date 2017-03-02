@@ -3,7 +3,7 @@ import random
 x_center,y_center = 10,10
 
 data = list()
-num = 100
+num = 1000
 inside,outside = 0,0
 while (inside + outside < num):
     point = list()

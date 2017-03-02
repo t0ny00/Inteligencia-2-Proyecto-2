@@ -7,7 +7,7 @@ def createNeuronLayer(n, size):
     layer = []
     for i in range(0, n):
         neuron = []
-        for j in range(0, size):
+        for j in range(size+1):
             neuron.append(random.uniform(-0.5, 0.5))
         neuron.append(0)
         neuron.append(0)
@@ -30,9 +30,20 @@ def forwardPropagate(nn,instance):
     for layer in nn :
         new_values = []
         for neuron in layer:
-            net = calculateCost(neuron[:-2],input)
+            net = calculateCost(neuron[:-3],input) + neuron[-3]
             sigmoid_result = activateSigmoid(net)
             neuron[-2] = sigmoid_result
+            new_values.append(sigmoid_result)
+        input = new_values
+    return input
+
+def test(nn,instance):
+    input = instance
+    for layer in nn :
+        new_values = []
+        for neuron in layer:
+            net = calculateCost(neuron[:-3],input) + neuron[-3]
+            sigmoid_result = activateSigmoid(net)
             new_values.append(sigmoid_result)
         input = new_values
     return input
@@ -62,25 +73,30 @@ def updateWeights(nn,alpha,instance):
         layer = nn[i]
         for j in range(0,len(layer)):
             neuron = layer[j]
-            for k in range(len(neuron)-2):
+            for k in range(len(neuron)-3):
                 if i == 0:
                     delta = alpha*neuron[-1]*instance[k]
                     neuron[k] = neuron[k] + delta
                 else:
-                    delta = alpha * neuron[-1] * nn[i-1][j][-2]
+                    delta = alpha * neuron[-1] * nn[i-1][k][-2]
                     neuron[k] = neuron[k] + delta
 
+def extractData(data,y_size):
+    numberColumns = data.shape[1]
+    y = data[:,numberColumns-y_size:]
+    x = data[:, 0:numberColumns - y_size]
+    return x,np.reshape(y,(len(y),y_size))
 
-def backPropagation(nn, train_data, alpha, num_iter):
+def backPropagation(nn, x,y, alpha, num_iter):
 
     for i in range(0, num_iter):
         sum_error = 0
-        for row in train_data:
-            instance = row[:-1]
-            expected = row[-1]
+        for k in range(len(x)):
+            instance = x[k]
+            expected = y[k]
             outputs = forwardPropagate(nn, instance)
-            sum_error += sum([(expected - outputs[j]) ** 2 for j in range(len(outputs))])
-            calculateErrorOutputs(nn, [expected])
+            sum_error += sum([(expected[j] - outputs[j]) ** 2 for j in range(len(outputs))])
+            calculateErrorOutputs(nn, expected)
             calculateErrorHidden(nn)
             updateWeights(nn, alpha, instance)
         if (i % 10) == 0 : print('Iter=%d, alpha=%.3f, error=%.3f' % (i, alpha, sum_error))

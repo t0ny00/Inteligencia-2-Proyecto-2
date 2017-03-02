@@ -3,23 +3,19 @@ import NN as network
 import sys
 import random
 
-def extractData(data):
-    numberColumns = data.shape[1]
-    y = data[:, numberColumns - 1]
-    x = data[:, 0:numberColumns - 1]
-    return x,np.reshape(y,(len(y),1))
 
 
 if __name__ == '__main__':
 
-    alpha = 0.7
-    num_iter = 1000
-    n_in,n_hidden,n_out = 2,5,1
-    train_set = np.loadtxt("generated_100.txt")
-    x,y = extractData(train_set)
+    alpha = 0.1
+    num_iter = 500
+    n_in,n_hidden,n_out = 2,10,1
+    train_set = np.loadtxt("generated_1000.txt")
+    x,y = network.extractData(train_set,n_out)
     # random.seed(1)
     nn = network.createNeuralNetwork(n_in,n_hidden,n_out)
     print nn
-    network.backPropagation(nn,train_set,alpha,num_iter)
+    network.backPropagation(nn,x,y,alpha,num_iter)
     print nn
-    print network.forwardPropagate(nn,x[2])
+    for i in range(len(train_set)):
+        print str(x[i]) + " " + str(round(network.test(nn,x[i])[0])) + " " + str(round(network.test(nn,x[i])[0]) == y[i]) + " " + str(i+1) + ""
