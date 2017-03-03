@@ -81,12 +81,6 @@ def updateWeights(nn,alpha,instance):
                     delta = alpha * neuron[-1] * nn[i-1][k][-2]
                     neuron[k] = neuron[k] + delta
 
-def extractData(data,y_size):
-    numberColumns = data.shape[1]
-    y = data[:,numberColumns-y_size:]
-    x = data[:, 0:numberColumns - y_size]
-    return x,np.reshape(y,(len(y),y_size))
-
 def backPropagation(nn, x,y, alpha, num_iter):
 
     for i in range(0, num_iter):
@@ -100,5 +94,14 @@ def backPropagation(nn, x,y, alpha, num_iter):
             calculateErrorHidden(nn)
             updateWeights(nn, alpha, instance)
         if (i % 10) == 0 : print('Iter=%d, alpha=%.3f, error=%.3f' % (i, alpha, sum_error))
+    return sum_error
+
+def extractData(data,y_size):
+    numberColumns = data.shape[1]
+    y = data[:,numberColumns-y_size:]
+    x = data[:, 0:numberColumns - y_size]
+    return x,np.reshape(y,(len(y),y_size))
+
+
 
 
