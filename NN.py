@@ -102,6 +102,17 @@ def extractData(data,y_size):
     x = data[:, 0:numberColumns - y_size]
     return x,np.reshape(y,(len(y),y_size))
 
+def normalize(array):
+    n = len(array)
+    media = np.mean(array,axis=0)
+    dev_standard = np.std(array,axis=0)
 
+    #Create normalized array
+    new_array = []
+    for elem in array:
+        temp = np.divide((elem - media) ,dev_standard)
+        new_array.append(temp)
+    out = np.asarray(new_array)
+    return out
 
 
