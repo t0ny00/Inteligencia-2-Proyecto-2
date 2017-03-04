@@ -37,14 +37,14 @@ if __name__ == '__main__':
     # -----------------TRAIN-------------------
     x,y = network.extractData(train_data, n_out)
     nn = network.createNeuralNetwork(n_in,n_hidden,n_out)
-    error = network.backPropagation(nn,x,y,alpha,num_iter)
-
+    error,log = network.backPropagation(nn,x,y,alpha,num_iter)
+    print log
     # -------------- TEST--------------------
     x, y = network.extractData(test_data, n_out)
     good_predictions,bad_predictions = 0,0
     print "\nID     Instance        Prediction Result  "
     for i in range(len(x)):
-        out = network.test(nn,x[i])
+        out = network.predict(nn, x[i])
         result = convert(out)
         correct = np.array_equal(result,y[i])
         if (correct) : good_predictions += 1
