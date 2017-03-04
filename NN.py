@@ -103,19 +103,21 @@ def updateWeights(nn,alpha,instance):
 # Returns the final SSE during training
 def backPropagation(nn, x,y, alpha, num_iter):
     log = []
+    n = len(x)
     for i in range(0, num_iter):
-        sum_error = 0
+        sum_error,cost_func = 0,0
         for k in range(len(x)):
             instance = x[k]
             expected = y[k]
             outputs = forwardPropagate(nn, instance)
-            sum_error += (sum([(expected[j] - outputs[j]) ** 2 for j in range(len(outputs))]))/2
+            sum_error += (sum([(expected[j] - outputs[j]) ** 2 for j in range(len(outputs))]))
+            cost_func += sum_error/(2*n)
             calculateErrorOutputs(nn, expected)
             calculateErrorHidden(nn)
             updateWeights(nn, alpha, instance)
         if (i % 10) == 0 :
             print('Iter=%d, alpha=%.3f, error=%.3f' % (i, alpha, sum_error))
-            log.append([i,sum_error])
+            log.append([i,cost_func])
     log = np.resize(log,(len(log),len(log[0])))
     return sum_error,log
 

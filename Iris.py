@@ -38,7 +38,7 @@ if __name__ == '__main__':
     x,y = network.extractData(train_data, n_out)
     nn = network.createNeuralNetwork(n_in,n_hidden,n_out)
     error,log = network.backPropagation(nn,x,y,alpha,num_iter)
-    print log
+
     # -------------- TEST--------------------
     x, y = network.extractData(test_data, n_out)
     good_predictions,bad_predictions = 0,0
