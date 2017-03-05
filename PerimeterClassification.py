@@ -18,7 +18,7 @@ def costFunctionPlot(data, numberIterations, alpha):
 if __name__ == '__main__':
 
     alpha = float(sys.argv[1])
-    file_name = "datos_P2_EM2017_N2000.txt"
+    file_name = "generated_1000.txt"
     num_iter = 8000
     n_in,n_hidden,n_out = 2,int(sys.argv[2]),1
     train_set = np.loadtxt(file_name)
