@@ -1,0 +1,86 @@
+Iter=0, alpha=0.100, error=61.440
+Iter=10, alpha=0.100, error=8.769
+Iter=20, alpha=0.100, error=2.228
+Iter=30, alpha=0.100, error=1.175
+Iter=40, alpha=0.100, error=0.785
+Iter=50, alpha=0.100, error=0.586
+Iter=60, alpha=0.100, error=0.466
+Iter=70, alpha=0.100, error=0.386
+Iter=80, alpha=0.100, error=0.329
+Iter=90, alpha=0.100, error=0.286
+Iter=100, alpha=0.100, error=0.253
+Iter=110, alpha=0.100, error=0.227
+Iter=120, alpha=0.100, error=0.206
+Iter=130, alpha=0.100, error=0.188
+Iter=140, alpha=0.100, error=0.173
+Iter=150, alpha=0.100, error=0.160
+Iter=160, alpha=0.100, error=0.149
+Iter=170, alpha=0.100, error=0.139
+Iter=180, alpha=0.100, error=0.131
+Iter=190, alpha=0.100, error=0.123
+Iter=200, alpha=0.100, error=0.117
+Iter=210, alpha=0.100, error=0.111
+Iter=220, alpha=0.100, error=0.105
+Iter=230, alpha=0.100, error=0.100
+Iter=240, alpha=0.100, error=0.096
+Iter=250, alpha=0.100, error=0.092
+Iter=260, alpha=0.100, error=0.088
+Iter=270, alpha=0.100, error=0.084
+Iter=280, alpha=0.100, error=0.081
+Iter=290, alpha=0.100, error=0.078
+Iter=300, alpha=0.100, error=0.075
+Iter=310, alpha=0.100, error=0.073
+Iter=320, alpha=0.100, error=0.070
+Iter=330, alpha=0.100, error=0.068
+Iter=340, alpha=0.100, error=0.066
+Iter=350, alpha=0.100, error=0.064
+Iter=360, alpha=0.100, error=0.062
+Iter=370, alpha=0.100, error=0.060
+Iter=380, alpha=0.100, error=0.059
+Iter=390, alpha=0.100, error=0.057
+Iter=400, alpha=0.100, error=0.055
+Iter=410, alpha=0.100, error=0.054
+Iter=420, alpha=0.100, error=0.053
+Iter=430, alpha=0.100, error=0.051
+Iter=440, alpha=0.100, error=0.050
+Iter=450, alpha=0.100, error=0.049
+Iter=460, alpha=0.100, error=0.048
+Iter=470, alpha=0.100, error=0.047
+Iter=480, alpha=0.100, error=0.046
+Iter=490, alpha=0.100, error=0.045
+
+ID     Instance        Prediction Result  
+1 [ 5.   2.   3.5  1. ] [0, 1] True
+2 [ 5.9  3.   4.2  1.5] [0, 1] True
+3 [ 6.   2.2  4.   1. ] [0, 1] True
+4 [ 6.1  2.9  4.7  1.4] [0, 1] True
+5 [ 5.6  2.9  3.6  1.3] [0, 1] True
+6 [ 6.7  3.1  4.4  1.4] [0, 1] True
+7 [ 5.6  3.   4.5  1.5] [0, 1] True
+8 [ 5.8  2.7  4.1  1. ] [0, 1] True
+9 [ 6.2  2.2  4.5  1.5] [0, 1] True
+10 [ 5.6  2.5  3.9  1.1] [0, 1] True
+11 [ 5.9  3.2  4.8  1.8] [0, 1] True
+12 [ 6.1  2.8  4.   1.3] [0, 1] True
+13 [ 6.3  2.5  4.9  1.5] [0, 1] True
+14 [ 6.1  2.8  4.7  1.2] [0, 1] True
+15 [ 6.4  2.9  4.3  1.3] [0, 1] True
+16 [ 7.7  3.   6.1  2.3] [0, 1] True
+17 [ 6.3  3.4  5.6  2.4] [0, 1] True
+18 [ 6.4  3.1  5.5  1.8] [0, 1] True
+19 [ 6.   3.   4.8  1.8] [0, 1] True
+20 [ 6.9  3.1  5.4  2.1] [0, 1] True
+21 [ 6.7  3.1  5.6  2.4] [0, 1] True
+22 [ 6.9  3.1  5.1  2.3] [0, 1] True
+23 [ 5.8  2.7  5.1  1.9] [0, 1] True
+24 [ 6.8  3.2  5.9  2.3] [0, 1] True
+25 [ 6.7  3.3  5.7  2.5] [0, 1] True
+26 [ 6.7  3.   5.2  2.3] [0, 1] True
+27 [ 6.3  2.5  5.   1.9] [0, 1] True
+28 [ 6.5  3.   5.2  2. ] [0, 1] True
+29 [ 6.2  3.4  5.4  2.3] [0, 1] True
+30 [ 5.9  3.   5.1  1.8] [0, 1] True
+------------------ Results ---------------------
+Iterations = 500     Learning Rate = 0.100
+Error Value = 0.0440
+Correctly Predicted = 30     Badly Predicted = 0

@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     alpha = 0.1
     num_iter = 500
-    n_in,n_hidden,n_out = 4,10,3
+    n_in,n_hidden,n_out = 4,2,3
     percentage = 50 # Data split percentage
     data = np.loadtxt("iris_3classes.txt", delimiter=",")
     train_data, test_data = splitData(data, percentage, n_out)
