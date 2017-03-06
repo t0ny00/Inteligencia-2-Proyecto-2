@@ -1,0 +1,46 @@
+Generated 1000
+
+2
+
+	ID     Instance        Prediction Result  
+	------------------ Results ---------------------
+	File = generated_1000.txt Iterations = 8000     Learning Rate = 0.090  Hidden Layer = 2
+	Error Value = 250.2011
+	Correctly Predicted = 5070     Poorly Predicted = 4930
+	False Positives = 2579     False Negatives = 2351
+
+4
+
+	ID     Instance        Prediction Result  
+	------------------ Results ---------------------
+	File = generated_1000.txt Iterations = 8000     Learning Rate = 0.090  Hidden Layer = 4
+	Error Value = 184.8028
+	Correctly Predicted = 7472     Poorly Predicted = 2528
+	False Positives = 1264     False Negatives = 1264
+
+6
+
+	ID     Instance        Prediction Result  
+	------------------ Results ---------------------
+	File = generated_1000.txt Iterations = 8000     Learning Rate = 0.090  Hidden Layer = 6
+	Error Value = 145.2208
+	Correctly Predicted = 8047     Poorly Predicted = 1953
+	False Positives = 1102     False Negatives = 851
+
+8
+
+	ID     Instance        Prediction Result  
+	------------------ Results ---------------------
+	File = generated_1000.txt Iterations = 8000     Learning Rate = 0.090  Hidden Layer = 8
+	Error Value = 116.3021
+	Correctly Predicted = 8241     Poorly Predicted = 1759
+	False Positives = 875     False Negatives = 884
+
+10
+
+	ID     Instance        Prediction Result  
+	------------------ Results ---------------------
+	File = generated_1000.txt Iterations = 8000     Learning Rate = 0.090  Hidden Layer = 10
+	Error Value = 49.8374
+	Correctly Predicted = 9586     Poorly Predicted = 414
+	False Positives = 201     False Negatives = 213
